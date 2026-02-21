@@ -6,6 +6,8 @@ import {
   motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css"; 
 
 interface TimelineEntry {
   title: string;
@@ -13,6 +15,11 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+
+    useEffect(() => {
+      Aos.init({ duration: 1500, once: true });
+    }, []);
+
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
@@ -38,7 +45,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
      
-     <div className="px-5 md:text-center py-10">
+     <div className="px-5 md:text-center py-10" data-aos="fade-up">
       <div>
         <h2 className="text-3xl">Experience & <span className="text-[#ea1d5d] text-[2rem] font-cursive" style={{ fontFamily: "'Great Vibes', cursive" }} >Exposure</span></h2>
       </div>

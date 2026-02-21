@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { 
   IconMail, 
   IconMapPin, 
@@ -9,8 +9,13 @@ import {
   IconSend
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export function ContactSection() {
+    useEffect(() => {
+      Aos.init({ duration: 1500, once: true });
+    }, []);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -60,13 +65,13 @@ export function ContactSection() {
     <section id="contact" className="bg-black/[0.96] py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let&apos;s <span className="text-[#ea1d5d] text-[2rem] font-cursive" style={{ fontFamily: "'Great Vibes', cursive" }} >Connect</span></h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" data-aos="fade-up">Let&apos;s <span className="text-[#ea1d5d] text-[2rem] font-cursive" style={{ fontFamily: "'Great Vibes', cursive" }} >Connect</span></h2>
+          <p className="text-neutral-400 max-w-2xl mx-auto" data-aos="fade-down" data-aos-delay="200">
             Whether you have a question, a project idea, or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center" data-aos="fade-right">
           
           {/* Left Side: Contact Details */}
           <div className="flex flex-col justify-center space-y-8 lg:pr-10">
@@ -96,7 +101,7 @@ export function ContactSection() {
           </div>
 
           {/* Right Side: Contact Form */}
-          <div className="bg-neutral-950/50 border border-neutral-800 rounded-2xl p-8 backdrop-blur-sm shadow-2xl">
+          <div className="bg-neutral-950/50 border border-neutral-800 rounded-2xl p-8 backdrop-blur-sm shadow-2xl" data-aos="fade-left">
             <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
               
               <div className="flex flex-col space-y-2">
@@ -163,7 +168,6 @@ export function ContactSection() {
   );
 }
 
-// Reusable micro-component for the contact details
 const ContactInfoItem = ({ 
   icon, 
   title, 

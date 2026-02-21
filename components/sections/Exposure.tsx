@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { 
@@ -15,11 +15,17 @@ import {
   IconListCheck
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import Aos from "aos";
+import "aos/dist/aos.css"; 
 
 export function ExposureSection() {
+
+    useEffect(() => {
+      Aos.init({ duration: 1500, once: true });
+    }, []);
   return (
     <section id="projects" className="py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
         <h2 className="text-3xl font-bold text-white mb-10 text-center">
           Exposure & <span className="text-[#ea1d5d] text-[2rem] font-cursive" style={{ fontFamily: "'Great Vibes', cursive" }} >Projects</span>
         </h2>
@@ -38,7 +44,7 @@ export function ExposureSection() {
                 {/* 🚨 FIX: added pointer-events-auto to the children container */}
                 <CardItem 
                   translateZ="50" 
-                  className="w-full h-full pointer-events-auto"
+                  className="w-full h-full pointer-events-auto" data-aos="fade-up"
                 >
                   <BentoGridItem
                     title={item.title}

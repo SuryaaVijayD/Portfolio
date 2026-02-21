@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
   IconBrandReact, 
@@ -12,12 +12,17 @@ import {
   IconServer,
   IconRobot
 } from "@tabler/icons-react";
+import Aos from "aos";
+import "aos/dist/aos.css"; 
 
 export function SkillsSection() {
+    useEffect(() => {
+      Aos.init({ duration: 1500, once: true });
+    }, []);
   return (
     <section id="skills" className="py-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">
+        <h2 className="text-3xl font-bold text-white mb-12 text-center" data-aos="fade-up">
           Technical <span className="text-[#ea1d5d] text-[2rem] font-cursive" style={{ fontFamily: "'Great Vibes', cursive" }} >Proficiency</span>
         </h2>
         
@@ -29,6 +34,7 @@ export function SkillsSection() {
               name={skill.name} 
               percentage={skill.percentage} 
               icon={skill.icon} 
+              data-aos="fade-right"
             />
           ))}
         </div>
