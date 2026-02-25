@@ -12,7 +12,8 @@ import {
   IconTool,
   IconCurrencyBitcoin,
   IconPizza,
-  IconListCheck
+  IconListCheck,
+  IconCar // Added new icon for the vehicle insurance project
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import Aos from "aos";
@@ -23,6 +24,7 @@ export function ExposureSection() {
     useEffect(() => {
       Aos.init({ duration: 1500, once: true });
     }, []);
+
   return (
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
@@ -143,4 +145,11 @@ const exposureItems = [
     icon: <IconListCheck className="h-4 w-4 text-purple-400" />,
     link: "https://todosv.ccbp.tech/"
   },
+  {
+    title: "Vehicle Insurance Policy Management",
+    description: "Fully developed in Spring Boot and Thymeleaf, featuring Spring Security integration and a scalable, microservice-like architecture.",
+    header: <Skeleton bgClass="bg-gradient-to-br from-blue-900 to-black" />,
+    icon: <IconCar className="h-4 w-4 text-purple-400" />,
+    link: "https://vehicle-insurance-policy-management.onrender.com"
+  }
 ];
