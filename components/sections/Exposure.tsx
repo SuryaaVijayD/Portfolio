@@ -132,6 +132,13 @@ const exposureItems = [
     link: "https://drive.google.com/file/d/1DSC-Vd7HtWrlhNk3t-IQD5kc7Ix7hCgh/view"
   },
   {
+    title: "Vehicle Insurance Policy Management",
+    description: "Fully developed in Spring Boot and Thymeleaf, featuring Spring Security integration and a scalable, microservice-like architecture.",
+    header: <Skeleton bgClass="bg-gradient-to-br from-blue-900 to-black" />,
+    icon: <IconCar className="h-4 w-4 text-purple-400" />,
+    link: "https://vehicle-insurance-policy-management.onrender.com"
+  },
+  {
     title: "FoodMunch App",
     description: "The food delivery application offers dynamic responsiveness for a seamless user experience.",
     header: <ImageHeader src="https://res.cloudinary.com/dvp9gkjpk/image/upload/v1711699046/Screenshot_2024-03-29_131238_wveuyh.png" />,
@@ -144,12 +151,5 @@ const exposureItems = [
     header: <ImageHeader src="https://res.cloudinary.com/dvp9gkjpk/image/upload/v1720507095/Screenshot_189_aa4z9k.png" />,
     icon: <IconListCheck className="h-4 w-4 text-purple-400" />,
     link: "https://todosv.ccbp.tech/"
-  },
-  {
-    title: "Vehicle Insurance Policy Management",
-    description: "Fully developed in Spring Boot and Thymeleaf, featuring Spring Security integration and a scalable, microservice-like architecture.",
-    header: <Skeleton bgClass="bg-gradient-to-br from-blue-900 to-black" />,
-    icon: <IconCar className="h-4 w-4 text-purple-400" />,
-    link: "https://vehicle-insurance-policy-management.onrender.com"
   }
 ];
